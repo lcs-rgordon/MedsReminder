@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct IntroView: View {
+    
+    // MARK: Stored properties
+    @State private var titleOffset = -350.0
+    
+    // MARK: Computed properties
     var body: some View {
         ZStack {
             
@@ -21,6 +26,7 @@ struct IntroView: View {
                     .foregroundStyle(Color.white)
                     .font(.custom("Helvetica", size: 64.0, relativeTo: .largeTitle))
                     .bold()
+                    .offset(x: titleOffset)
                 
                 Spacer()
                 
@@ -44,6 +50,11 @@ struct IntroView: View {
 
 
                 Spacer()
+            }
+        }
+        .task {
+            withAnimation(.easeInOut(duration: 3.0)) {
+                titleOffset = 0.0
             }
         }
     }
