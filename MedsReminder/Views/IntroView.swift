@@ -19,7 +19,7 @@ struct IntroView: View {
                 
                 Text("Meds\nReminder")
                     .foregroundStyle(Color.white)
-                    .font(.largeTitle)
+                    .font(.custom("Helvetica", size: 64.0, relativeTo: .largeTitle))
                     .bold()
                 
                 Spacer()
